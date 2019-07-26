@@ -39,8 +39,8 @@ $(document).on("click", "articleDownload", function() {
 
       // If there's a note in the article
       if (data.note) {
-        $("#titleinput").val(data.note.title);
-        $("#bodyinput").val(data.note.body);
+        $("#title").val(data.note.title);
+        $("#body").val(data.note.body);
       }
     });
 
@@ -56,9 +56,9 @@ $(document).on("click", "#savenote", function() {
       url: "/articles/" + thisId,
       data: {
         // Value taken from title input
-        title: $("#titleinput").val(),
+        title: $("#title").val(),
         // Value taken from note textarea
-        body: $("#bodyinput").val()
+        body: $("#body").val()
       }
     })
       // With that done
@@ -69,7 +69,7 @@ $(document).on("click", "#savenote", function() {
         $("#notes").empty();
       });
   
-    $("#titleinput").val("");
-    $("#bodyinput").val("");
+    $("#title").val("");
+    $("#body").val("");
   });
   
